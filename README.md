@@ -16,21 +16,21 @@ Projekt aplikacji mobilnej - wykład
 # 4. Lista Zadań
   ### Moduły:
 - [x] Nazwa aplikacji
-- [] Plan przejrzystego layoutu
-- [] Roboczy layout
-- [] Główne funkcje
-- [] Utworzenie i podpięcie bazy danych 
-- [] Podstawowy mechanizm wyszukiwania
-- [] Podział na kategorie wydatków (?)
-- [] Finalny layout
+- [ ] Plan przejrzystego layoutu
+- [ ] Roboczy layout
+- [ ] Główne funkcje
+- [ ] Utworzenie i podpięcie bazy danych 
+- [ ] Podstawowy mechanizm wyszukiwania
+- [ ] Podział na kategorie wydatków (?)
+- [ ] Finalny layout
 
   ### Ewentualne poboczne:
-- [] Lokalizacja i korekta błędów w aplikacji
-- [] Poprawki layoutu
+- [ ] Lokalizacja i korekta błędów w aplikacji
+- [ ] Poprawki layoutu
 
   ### Raporty:
  - [x] Propozycja projektu (07.01.22)
- - [] Prezentacje/oddanie projektu (28.01.22)
+ - [ ] Prezentacje/oddanie projektu (28.01.22)
 
 
 

@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/drawable/ic_baseline_monetization_on_24.xml" value="0.22135416666666666" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/money_list_item.xml" value="0.28940217391304346" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
       </map>
     </option>

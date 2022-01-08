@@ -17,9 +17,9 @@ Projekt aplikacji mobilnej - wykład
   ### Moduły:
 - [x] Nazwa aplikacji
 - [ ] Plan przejrzystego layoutu
-- [ ] Roboczy layout
+- [x] Roboczy layout
 - [ ] Główne funkcje
-- [ ] Utworzenie i podpięcie bazy danych 
+- [x] Utworzenie i podpięcie bazy danych 
 - [ ] Podstawowy mechanizm wyszukiwania
 - [ ] Podział na kategorie wydatków (?)
 - [ ] Finalny layout

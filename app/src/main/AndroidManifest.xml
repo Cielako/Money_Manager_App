@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyManagerApp">
         <activity
+            android:name=".TransActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

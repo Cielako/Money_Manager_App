@@ -53,7 +53,7 @@ public class TransactionListAdapter extends RecyclerView.Adapter<TransactionList
             adapter.notifyItemChanged(position);
 
             intent = new Intent(view.getContext(), TransActivity.class);
-            intent.putExtra("crimeUUID",element.getId().toString());
+            intent.putExtra("transactionUUID",element.getId().toString());
             view.getContext().startActivity(intent);
 
         }
@@ -70,14 +70,15 @@ public class TransactionListAdapter extends RecyclerView.Adapter<TransactionList
     public void onBindViewHolder(@NonNull TransViewHolder holder, int position) {
         Transaction current = transList.get(position);
         if(current.getTransType().equals("income")){
-            holder.transTypeImage.setColorFilter(Color.argb(255, 0, 255, 0));
+            holder.transTypeImage.setColorFilter(Color.argb(255, 0, 128, 0));
+            holder.transAmountText.setText(current.getAmount().toString());
         }
         else if(current.getTransType().equals("expense")){
-            holder.transTypeImage.setColorFilter(Color.argb(255, 255, 0, 0));
+            holder.transTypeImage.setColorFilter(Color.argb(255, 220, 0, 0));
+            holder.transAmountText.setText("-" + current.getAmount().toString());
         }
         holder.transTitleText.setText(current.getTitle());
         holder.transTypeText.setText(current.getTransType());
-        holder.transAmountText.setText(current.getAmount().toString());
     }
 
     @Override

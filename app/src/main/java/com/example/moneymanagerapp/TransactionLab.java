@@ -1,5 +1,6 @@
 package com.example.moneymanagerapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class TransactionLab {
-    private  static TransactionLab sTransationLab;
+    private  static TransactionLab sTransactionLab;
 
     private SQLiteDatabase mDatabase;
 
@@ -18,10 +19,10 @@ public class TransactionLab {
     }
 
     public static  TransactionLab get(Context context){
-        if(sTransationLab == null){
-            sTransationLab = new TransactionLab(context);
+        if(sTransactionLab == null){
+            sTransactionLab = new TransactionLab(context);
         }
-        return sTransationLab;
+        return sTransactionLab;
     }
 
     public Transaction getTransaction(UUID id) {
@@ -65,5 +66,24 @@ public class TransactionLab {
             cursor.close();
         }
         return transactions;
+    }
+
+    public void updateTransaction(UUID id, String title, String Amount, String Type) {
+        Transaction transaction = new Transaction(id);
+        transaction.setTitle(title);
+        transaction.setAmount(Double.parseDouble(Amount));
+        transaction.setTranstype(Type);
+        mDatabase.update("transactions",getContetntValues(transaction), "_uuid = ?",
+                new String[] {id.toString()});
+
+    }
+    private ContentValues getContetntValues(Transaction transaction){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("_uuid", transaction.getId().toString());
+        contentValues.put("trans_title", transaction.getTitle());
+        contentValues.put("type", transaction.getTransType());
+        contentValues.put("amount",transaction.getAmount());
+
+        return contentValues;
     }
 }

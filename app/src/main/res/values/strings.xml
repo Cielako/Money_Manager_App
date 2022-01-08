@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MoneyManagerApp</string>
+    <string name="trans_title"><u>Transaction Title</u></string>
+    <string name="trans_amount"><u>Amount</u></string>
+    <string name="trans_type"><u>Transaction Type</u></string>
+
+    <string-array name="trans_types">
+        <item>income</item>
+        <item>expense</item>
+    </string-array>
+
 </resources>

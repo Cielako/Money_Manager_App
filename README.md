@@ -14,18 +14,23 @@ Projekt aplikacji mobilnej - wykład
 - Java 8
 - Android 11
 # 4. Lista Zadań
-  ### Moduły:
 - [x] Nazwa aplikacji
 - [ ] Plan przejrzystego layoutu
 - [x] Roboczy layout
-- [ ] Główne funkcje
+- Główne funkcje:
+  - [x] Wyświetlanie 
+  - [x] Dodawanie
+  - [x] Usuwanie
+  - [x] Edycja
+  - [ ] Saldo
 - [x] Utworzenie i podpięcie bazy danych 
-- [ ] Podstawowy mechanizm wyszukiwania
+- [x] Podstawowy mechanizm wyszukiwania
 - [ ] Podział na kategorie wydatków (?)
 - [ ] Finalny layout
 
   ### Ewentualne poboczne:
-- [ ] Lokalizacja i korekta błędów w aplikacji
+- Lokalizacja i korekta błędów w aplikacji
+  - [x] Filtracja wpisywanej kwoty ( czy wpisano Int lub Float)
 - [ ] Poprawki layoutu
 
   ### Raporty:

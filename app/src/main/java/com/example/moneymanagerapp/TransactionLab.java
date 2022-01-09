@@ -46,7 +46,7 @@ public class TransactionLab {
 
     public List<Transaction> getTransactions() {
 
-        Cursor cursor = mDatabase.query("transactions", null, null, null,null,null,null);
+        Cursor cursor = mDatabase.query("transactions", null, null, null,null,null,"_id"+" DESC");
         List<Transaction> transactions = new ArrayList<>();
         try {
             cursor.moveToFirst();
@@ -75,8 +75,16 @@ public class TransactionLab {
         transaction.setTranstype(Type);
         mDatabase.update("transactions",getContetntValues(transaction), "_uuid = ?",
                 new String[] {id.toString()});
-
     }
+
+    public void deleteTransaction(UUID id){
+        mDatabase.delete("transactions","_uuid = ?", new String[]{id.toString()});
+    }
+
+    public void newTransaction(Transaction transaction){
+        mDatabase.insert("transactions", null, getContetntValues(transaction));
+    }
+
     private ContentValues getContetntValues(Transaction transaction){
         ContentValues contentValues = new ContentValues();
         contentValues.put("_uuid", transaction.getId().toString());

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".TransActivity">
+
+    <TextView
+        android:id="@+id/trans_title"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/trans_title" />
+
+    <EditText
+        android:id="@+id/new_trans_title_text"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trans_title"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/trans_amount"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/new_trans_title_text"
+        android:text="@string/trans_amount"/>
+    <EditText
+        android:id="@id/new_trans_amount_text"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trans_amount"
+        android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal"/>
+    <TextView
+        android:id="@+id/trans_type"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_trans_amount_text"
+        android:layout_marginTop="20dp"
+        android:text="@string/trans_type"
+        android:layout_centerHorizontal="true"/>
+    <Spinner
+        android:id="@+id/new_trans_type_spinner"
+        android:minWidth="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_below="@id/trans_type"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

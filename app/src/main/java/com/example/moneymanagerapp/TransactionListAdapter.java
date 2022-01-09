@@ -6,22 +6,59 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TransactionListAdapter extends RecyclerView.Adapter<TransactionListAdapter.TransViewHolder> {
+public class TransactionListAdapter extends RecyclerView.Adapter<TransactionListAdapter.TransViewHolder> implements Filterable {
     public List<Transaction> transList;
+    public List<Transaction> getTransactionListFilter = new ArrayList<>();
     private LayoutInflater inflater;
 
     public TransactionListAdapter(Context context, List<Transaction> transList){
         // Odpowiada za tworzenie instancji zawartości plików XML układu w odpowiadających im obiektach view
         inflater = LayoutInflater.from(context);
         this.transList = transList;
+        this.getTransactionListFilter = transList;
+    }
+
+    @Override
+    public Filter getFilter() {
+        Filter filter = new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults filterResults = new FilterResults();
+                if(constraint == null || constraint.length() == 0) {
+                    filterResults.values = getTransactionListFilter;
+                    filterResults.count = getTransactionListFilter.size();
+                }else {
+                    String searchStr = constraint.toString().toLowerCase();
+                    List<Transaction> transList = new ArrayList<>();
+                    for(Transaction transaction: getTransactionListFilter){
+                        if(transaction.getTitle().toLowerCase().contains(searchStr)){
+                            transList.add(transaction);
+                        }
+                    }
+                    filterResults.values = transList;
+                    filterResults.count = transList.size();
+                }
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                transList = (List<Transaction>)results.values;
+                notifyDataSetChanged();
+            }
+        };
+        return filter;
     }
 
     class TransViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

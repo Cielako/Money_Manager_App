@@ -1,12 +1,20 @@
 package com.example.moneymanagerapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.method.DigitsKeyListener;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -26,6 +34,35 @@ public class TransActivity extends AppCompatActivity implements AdapterView.OnIt
 
         transTitleEdit = findViewById(R.id.trans_title_text);
         transAmountEdit = findViewById(R.id.trans_amount_text);
+        //float filter
+        transAmountEdit.setFilters(new InputFilter[] {
+                new DigitsKeyListener(Boolean.FALSE, Boolean.TRUE) {
+                    int beforeDecimal = 5, afterDecimal = 2;
+
+                    @Override
+                    public CharSequence filter(CharSequence source, int start, int end,
+                                               Spanned dest, int dstart, int dend) {
+                        String temp = transAmountEdit.getText() + source.toString();
+
+                        if (temp.equals(".")) {
+                            return "0.";
+                        }
+                        else if (temp.toString().indexOf(".") == -1) {
+                            // no decimal point placed yet
+                            if (temp.length() > beforeDecimal) {
+                                return "";
+                            }
+                        } else {
+                            temp = temp.substring(temp.indexOf(".") + 1);
+                            if (temp.length() > afterDecimal) {
+                                return "";
+                            }
+                        }
+
+                        return super.filter(source, start, end, dest, dstart, dend);
+                    }
+                }
+        });
         transTypeSpinner = findViewById(R.id.trans_type_spinner);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.trans_types, android.R.layout.simple_spinner_item);
@@ -71,14 +108,34 @@ public class TransActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.edit_transaction_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        TransactionLab.get(getApplicationContext()).updateTransaction(transUUID,transTitleEdit.getText().toString(),transAmountEdit.getText().toString(),transTypeSpinner.getSelectedItem().toString());
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.delete_transaction:
+                TransactionLab.get(getApplicationContext()).deleteTransaction(transUUID);
+                Toast.makeText(this, "Transaction Deleted Successfully :)", Toast.LENGTH_SHORT).show();
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if(transTitleEdit.getText().toString().isEmpty() || transAmountEdit.getText().toString().isEmpty()){
+            Toast.makeText(this, "Inputs Cant be empty :/", Toast.LENGTH_SHORT).show();
+        }else{
+            TransactionLab.get(getApplicationContext()).updateTransaction(transUUID,transTitleEdit.getText().toString(),transAmountEdit.getText().toString(),transTypeSpinner.getSelectedItem().toString());
+            Toast.makeText(this, "Transaction Edited Successfully :)", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 }

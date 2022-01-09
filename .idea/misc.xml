@@ -6,12 +6,21 @@
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/drawable/ic_baseline_monetization_on_24.xml" value="0.22135416666666666" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/activity_new_transaction.xml" value="0.20520833333333333" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/activity_trans.xml" value="0.20520833333333333" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/activity_transaction.xml" value="0.14356884057971014" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/content_new_transaction.xml" value="0.20520833333333333" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/money_list_item.xml" value="0.28940217391304346" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/layout/single_list_item.xml" value="0.20520833333333333" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/menu/edit_transaction_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/menu/list_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/menu/list_of_transactions_menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Studia/Semestr 5/PUM_Projekt/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
       </map>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/content_new_transaction.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

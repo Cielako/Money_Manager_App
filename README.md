@@ -15,27 +15,27 @@ Projekt aplikacji mobilnej - wykład
 - Android 11
 # 4. Lista Zadań
 - [x] Nazwa aplikacji
-- [ ] Plan przejrzystego layoutu
+- [x] Plan przejrzystego layoutu
 - [x] Roboczy layout
 - Główne funkcje:
   - [x] Wyświetlanie 
   - [x] Dodawanie
   - [x] Usuwanie
   - [x] Edycja
-  - [ ] Saldo
+  - [x] Saldo
 - [x] Utworzenie i podpięcie bazy danych 
 - [x] Podstawowy mechanizm wyszukiwania
-- [ ] Podział na kategorie wydatków (?)
-- [ ] Finalny layout
+- [ ] Podział na kategorie wydatków (?) - usunięto
+- [x] Finalny layout
 
   ### Ewentualne poboczne:
 - Lokalizacja i korekta błędów w aplikacji
   - [x] Filtracja wpisywanej kwoty ( czy wpisano Int lub Float)
-- [ ] Poprawki layoutu
+- [x] Poprawki layoutu
 
   ### Raporty:
  - [x] Propozycja projektu (07.01.22)
- - [ ] Prezentacje/oddanie projektu (28.01.22)
+ - [x] Prezentacje/oddanie projektu (28.01.22) / oddano (10.01.22) 
 
 
 

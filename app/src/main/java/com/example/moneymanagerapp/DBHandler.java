@@ -21,7 +21,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 "type," +
                 "amount)");
 
-        for (int i =0; i < 20; i++){
+        /*for (int i =0; i < 20; i++){
             ContentValues values = new ContentValues();
             values.put("_uuid",UUID.randomUUID().toString());
             values.put("trans_title","test");
@@ -31,9 +31,9 @@ public class DBHandler extends SQLiteOpenHelper {
             else{
                 values.put("type","expense");
             }
-            values.put("amount","128.0");
+            values.put("amount", 128.0);
             db.insert("transactions",null,values);
-        }
+        }*/
     }
 
     @Override

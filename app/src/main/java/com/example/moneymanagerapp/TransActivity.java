@@ -31,9 +31,10 @@ public class TransActivity extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
-
+        setTitle("Edit Transaction");
         transTitleEdit = findViewById(R.id.trans_title_text);
         transAmountEdit = findViewById(R.id.trans_amount_text);
+
         //float filter
         transAmountEdit.setFilters(new InputFilter[] {
                 new DigitsKeyListener(Boolean.FALSE, Boolean.TRUE) {
@@ -133,7 +134,7 @@ public class TransActivity extends AppCompatActivity implements AdapterView.OnIt
         if(transTitleEdit.getText().toString().isEmpty() || transAmountEdit.getText().toString().isEmpty()){
             Toast.makeText(this, "Inputs Cant be empty :/", Toast.LENGTH_SHORT).show();
         }else{
-            TransactionLab.get(getApplicationContext()).updateTransaction(transUUID,transTitleEdit.getText().toString(),transAmountEdit.getText().toString(),transTypeSpinner.getSelectedItem().toString());
+            TransactionLab.get(getApplicationContext()).updateTransaction(transUUID,transTitleEdit.getText().toString(),Double.parseDouble(transAmountEdit.getText().toString()),transTypeSpinner.getSelectedItem().toString());
             Toast.makeText(this, "Transaction Edited Successfully :)", Toast.LENGTH_SHORT).show();
             finish();
         }

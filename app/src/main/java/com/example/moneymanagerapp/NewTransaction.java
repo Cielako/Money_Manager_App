@@ -22,7 +22,7 @@ public class NewTransaction extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_transaction);
-
+        setTitle("Add new Transaction");
         transTitleEdit = findViewById(R.id.new_trans_title_text);
         transAmountEdit = findViewById(R.id.new_trans_amount_text);
         transAmountEdit.setFilters(new InputFilter[] {

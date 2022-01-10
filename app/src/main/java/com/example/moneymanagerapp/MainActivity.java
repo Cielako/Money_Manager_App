@@ -77,5 +77,6 @@ public class MainActivity extends AppCompatActivity {
         mTransactions = TransactionLab.get(getApplicationContext()).getTransactions();
         transactionListAdapter = new TransactionListAdapter(this, mTransactions);
         recyclerView.setAdapter(transactionListAdapter);
+        setTitle("Current Balance: " + TransactionLab.get(getApplicationContext()).currBalance() + " zł");
     }
 }

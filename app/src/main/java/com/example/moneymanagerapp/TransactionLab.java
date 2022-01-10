@@ -11,6 +11,7 @@ import java.util.UUID;
 
 public class TransactionLab {
     private  static TransactionLab sTransactionLab;
+    private Double currentBalance;
 
     private SQLiteDatabase mDatabase;
 
@@ -68,10 +69,10 @@ public class TransactionLab {
         return transactions;
     }
 
-    public void updateTransaction(UUID id, String title, String Amount, String Type) {
+    public void updateTransaction(UUID id, String title, Double Amount, String Type) {
         Transaction transaction = new Transaction(id);
         transaction.setTitle(title);
-        transaction.setAmount(Double.parseDouble(Amount));
+        transaction.setAmount(Amount);
         transaction.setTranstype(Type);
         mDatabase.update("transactions",getContetntValues(transaction), "_uuid = ?",
                 new String[] {id.toString()});
@@ -83,6 +84,22 @@ public class TransactionLab {
 
     public void newTransaction(Transaction transaction){
         mDatabase.insert("transactions", null, getContetntValues(transaction));
+    }
+
+    public Double currBalance(){
+        Cursor income = mDatabase.rawQuery("SELECT SUM(amount) AS total FROM transactions WHERE type = ?", new String[] {"income"});
+        Cursor expense = mDatabase.rawQuery("SELECT SUM(amount) AS total FROM transactions WHERE type = ?", new String[] {"expense"});
+        if(expense != null){
+            expense.moveToFirst();
+            System.out.println("expense: " + expense.getDouble(0));
+        }
+        if(income != null){
+            income.moveToFirst();
+            System.out.println("income: " +income.getDouble(0));
+        }
+        currentBalance = income.getDouble(0) - expense.getDouble(0);
+        return currentBalance;
+
     }
 
     private ContentValues getContetntValues(Transaction transaction){

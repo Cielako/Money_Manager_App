@@ -3,6 +3,8 @@ Projekt aplikacji mobilnej - wykład
 
 (?) - Dodatkowe założenia, które na ten czas są w planach, lecz mogą ulec zmianie 
 
+<img src="https://user-images.githubusercontent.com/37582084/149528239-9d22621a-2e42-44b8-8eef-d063e9e8be99.gif" width="256"/>
+ 
 # 1. Pomysł 
 - Stworzenie aplikacji umożliwiającej monitorowanie bieżących przychodów/wydatków.
 # 2. Założenia działania aplikacji
@@ -36,6 +38,8 @@ Projekt aplikacji mobilnej - wykład
   ### Raporty:
  - [x] Propozycja projektu (07.01.22)
  - [x] Prezentacje/oddanie projektu (28.01.22) / oddano (10.01.22) 
+ 
+
 
 
 
